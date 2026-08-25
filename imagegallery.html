@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 180px);
+            gap: 16px;
+            width: min(100% - 32px, 900px);
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            z-index: 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.35s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.12);
+        }
+
+        @media (max-width: 700px) {
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 180px);
+            }
+        }
+        .gallery-item:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-gallery">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/mountain-lake/800/500" alt="Mountain lake">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/forest-path/800/500" alt="Forest path">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/coastal-cliffs/800/500" alt="Coastal cliffs">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/city-lights/800/500" alt="City lights">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/desert-road/800/500" alt="Desert road">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/autumn-trees/800/500" alt="Autumn trees">
+        </div>
+    </div>
+</body>
+
+</html>
